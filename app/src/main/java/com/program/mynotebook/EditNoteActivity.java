@@ -20,7 +20,6 @@ import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.TextUtils;
-import android.text.TextWatcher;
 import android.text.style.ImageSpan;
 import android.util.DisplayMetrics;
 import android.view.KeyEvent;
@@ -129,33 +128,12 @@ public class EditNoteActivity extends Activity implements View.OnClickListener {
                 editText.append(contents[i + 1]);
                 editText.setSelection(contents[i + 1].length());
             }
-
         }
-
     }
 
     private void initView() {
         editText = (EditText) findViewById(R.id.editText);
         ll_delete = (LinearLayout) findViewById(R.id.delete_note);
-
-        editText.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                if (TextUtils.equals(s, null)) {
-
-                }
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
 
         //为四个LinearLayout设置按键监听
         findViewById(R.id.delete_note).setOnClickListener(this);

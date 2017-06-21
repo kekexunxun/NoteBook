@@ -65,7 +65,6 @@ public class MainActivity extends Activity implements View.OnClickListener, Swip
     private ImageView setting_iv;
 
 
-    //在onStart中线对数据库进行操作 获取数据库
     //如果在onResume中 设置pwd之后会导致返回主activity需要输入密码
     @Override
     protected void onStart() {
@@ -224,12 +223,6 @@ public class MainActivity extends Activity implements View.OnClickListener, Swip
         creator = new SwipeMenuCreator() {
             @Override
             public void create(SwipeMenu menu) {
-//                //新增一个喜欢的按钮
-//                SwipeMenuItem likeItem = new SwipeMenuItem(getApplicationContext());
-//                likeItem.setBackground(new ColorDrawable(Color.rgb(0xc9, 0xC9, 0xCE)));
-//                likeItem.setWidth();
-//                likeItem.setIcon(R.drawable.mine_favorite);
-//                menu.addMenuItem(likeItem);
                 //新增一个删除的按钮
                 SwipeMenuItem deleteItem = new SwipeMenuItem(getApplicationContext());
                 //deleteItem.setBackground(new ColorDrawable(Color.rgb(0xF9, 0x3F, 0x25)));

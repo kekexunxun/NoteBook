@@ -4,16 +4,16 @@ import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.view.View;
 import android.view.Window;
 
 import com.edmodo.cropper.CropImageView;
 
 /**
  * Created by Administrator on 2017/06/08.
+ *
  */
 
-public class ImageCropActivity extends Activity implements View.OnClickListener {
+public class ImageCropActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,8 +25,4 @@ public class ImageCropActivity extends Activity implements View.OnClickListener 
         cropImageView.setImageBitmap(bitmap);
     }
 
-    @Override
-    public void onClick(View v) {
-
-    }
 }

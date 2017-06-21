@@ -40,7 +40,7 @@ public class Password extends Activity implements View.OnClickListener {
     private ImageView pwd_3;
     private ImageView pwd_4;
 
-    //当应用程序创建时 读取SharedPreference
+    //当Activity打开时 读取SharedPreference
     @Override
     protected void onStart() {
         super.onStart();
@@ -130,7 +130,7 @@ public class Password extends Activity implements View.OnClickListener {
         }
     }
 
-    //当密码输入失败是 调用系统震动功能
+    //当密码输入失败时 调用系统震动功能
     private void startVibrate() {
         vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
         long[] pattern = {100, 400, 100, 400}; // 停止 开启 停止 开启
@@ -149,7 +149,6 @@ public class Password extends Activity implements View.OnClickListener {
         Intent i = new Intent();
         i.putExtra("password", false);
         setResult(MainActivity.PASSWORD_ACTIVITY, i);
-        //startActivity(i);
         finish();
     }
 
@@ -169,7 +168,7 @@ public class Password extends Activity implements View.OnClickListener {
         }
     }
 
-    //重新onKeyDown事件 当点击系统返回按键时，也将页面保存
+    //重新onKeyDown事件 当点击系统返回按键时 弹出对话框 是否退出
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
@@ -183,19 +182,10 @@ public class Password extends Activity implements View.OnClickListener {
                             myActivityManager.exit();
                         }
                     })
-                    .setPositiveButton("取消", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-
-                        }
-                    }).create();
+                    .setPositiveButton("取消", null).create();
             dialog.show();
         }
         return super.onKeyDown(keyCode, event);
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-    }
 }

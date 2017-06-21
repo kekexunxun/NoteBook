@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 /**
  * Created by Administrator on 2017/06/02.
+ *
  */
 
 public class ListData extends SQLiteOpenHelper {
@@ -15,12 +16,8 @@ public class ListData extends SQLiteOpenHelper {
     public static final String TABLE_COLUMN_NAME_TIME = "time";
     public static final String TABLE_COLUMN_NAME_TITLE = "title";
     public static final String TABLE_COLUMN_NAME_CONTENT = "note";
-    //public static final String TABLE_COLUMN_NAME_CONTENT="notes";
-
     public static final String TABLE_COLUMN_NAME_MEDIA_PATH = "path";
-    public static final String TABLE_NAME_MEDIA = "media";
-    public static final String COLUMN_NAME_MEDIA_OWNER_NOTE_ID = "note_id";
-    public static final String TABLE_COLUMN_NAME_MEDIA_LOCATION = "location";
+
 
 
     //我们只需要传递进来一个context就好了
@@ -40,11 +37,6 @@ public class ListData extends SQLiteOpenHelper {
                 + " TEXT NOT NULL DEFAULT \"\"," + TABLE_COLUMN_NAME_MEDIA_PATH
                 + " TEXT NOT NULL DEFAULT \"\"," + TABLE_COLUMN_NAME_TIME
                 + " TEXT NOT NULL DEFAULT \"\"" + ")");
-//        db.execSQL("CREATE TABLE " + TABLE_NAME_MEDIA + "(" + TABLE_COLUMN_NAME_ID
-//                + " INTEGER PRIMARY KEY AUTOINCREMENT," + TABLE_COLUMN_NAME_MEDIA_PATH
-//                + " TEXT NOT NULL DEFAULT \"\"," + TABLE_COLUMN_NAME_MEDIA_LOCATION
-//                + " TEXT NOT NULL DEFAULT \"\"," + COLUMN_NAME_MEDIA_OWNER_NOTE_ID
-//                + " INTEGER NOT NULL DEFAULT 0" + ")");
     }
 
     //更新时执行

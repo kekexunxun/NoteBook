@@ -136,9 +136,9 @@ public class CanvasDrawActivity extends Activity implements View.OnClickListener
 
                 //根据两点坐标 绘制连线  因为纵向上面有个引入的layout 会占据50dp的高度
                 if (!IS_ERASER) {
-                    canvas.drawLine(startX - 55, startY, stopX, stopY, paint);
+                    canvas.drawLine(startX, startY - 55, stopX, stopY - 55, paint);
                 } else {
-                    canvas.drawCircle(stopX - 55, stopY - 55, 20, circle);
+                    canvas.drawCircle(stopX, stopY - 55, 20, circle);
                 }
                 //更新起始点的位置
                 startX = stopX;
@@ -227,7 +227,7 @@ public class CanvasDrawActivity extends Activity implements View.OnClickListener
         blue.setImageResource(R.drawable.color_blue);
         blue1.setImageResource(R.drawable.color_blue1);
         green.setImageResource(R.drawable.color_green);
-        grey.setImageResource(R.drawable.bottom_grey);
+        grey.setImageResource(R.drawable.color_grey);
         orange.setImageResource(R.drawable.color_orange);
         orange1.setImageResource(R.drawable.color_orange1);
         purple.setImageResource(R.drawable.color_purple);

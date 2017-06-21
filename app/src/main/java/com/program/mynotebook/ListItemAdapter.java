@@ -12,7 +12,6 @@ import android.widget.BaseAdapter;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -88,7 +87,7 @@ public class ListItemAdapter extends BaseAdapter {
         //如果有图片的话
         if (mediaPath != null) {
             String[] mediaPaths = mediaPath.split("\\+");
-            Bitmap thumbnail = getImageThumbnail(mediaPaths[0], 65, 65);
+            Bitmap thumbnail = getImageThumbnail(mediaPaths[0], 100, 100);
             viewHolder.thumbnail.setImageBitmap(thumbnail);
         }
 
@@ -100,7 +99,7 @@ public class ListItemAdapter extends BaseAdapter {
             viewHolder.checkBox.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(context, String.valueOf(position), Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(context, String.valueOf(position), Toast.LENGTH_SHORT).show();
                     if (viewHolder.checkBox.isChecked()) {
                         selectedList.add(position);
                     } else {
