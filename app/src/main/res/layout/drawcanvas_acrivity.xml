@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/activity_notesedit_layout_top" />
+
+    <ImageView
+        android:id="@+id/showCanvas"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:src="@drawable/image_back"
+        android:scaleType="fitXY"
+        android:contentDescription="@string/draw_canvas" />
+
+    <include layout="@layout/drawcanvas_activity_bottom_colors" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/dropCanvas"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <ImageView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/drop"
+                android:src="@drawable/drop_32" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/eraser"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/drop"
+                android:src="@drawable/eraser_32" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/saveCanvas"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/drop"
+                android:src="@drawable/confirm_32" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

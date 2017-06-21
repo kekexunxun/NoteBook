@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/activity_notesedit_layout_top" />
+
+    <!-- 如果密码存在显示修改密码 -->
+    <TextView
+        android:id="@+id/setting_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="90dp"
+        android:text="@string/change_code"
+        android:textSize="25sp" />
+
+    <EditText
+        android:id="@+id/setting_et1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/setting_tv"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:width="200dp"
+        android:inputType="number"
+        android:maxLength="4" />
+
+    <EditText
+        android:id="@+id/setting_et2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/setting_et1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:width="200dp"
+        android:inputType="number"
+        android:maxLength="4" />
+
+    <TextView
+        android:id="@+id/setting_error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/setting_et2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:id="@+id/setting_tv_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="170dp"
+        android:layout_toLeftOf="@+id/setting_et1"
+        android:layout_toStartOf="@+id/setting_et1"
+        android:text="@string/password"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/setting_tv_password_again"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="220dp"
+        android:layout_toLeftOf="@+id/setting_et1"
+        android:layout_toStartOf="@+id/setting_et1"
+        android:text="@string/password_again"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/setting_confirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/setting_et2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:text="@string/setting_confirm" />
+
+
+</RelativeLayout>

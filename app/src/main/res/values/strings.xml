@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">myNoteBook</string>
+    <string name="noteBook">备忘录</string>
+    <string name="title">Title</string>
+    <string name="content">Content</string>
+    <string name="pic">pic</string>
+    <string name="note">记事本</string>
+    <string name="edit">编辑</string>
+    <string name="cancel">取消</string>
+    <string name="delete_all">删除全部</string>
+    <string name="image">image</string>
+    <string name="setting">Setting</string>
+    <string name="change_code">修改密码</string>
+    <string name="password">密码：</string>
+    <string name="password_again">再次输入密码：</string>
+    <string name="setting_confirm">确认修改</string>
+    <string name="notesNumber">有10篇记事本</string>
+    <string name="attachment">附件</string>
+    <string name="delete_selected">删除选中</string>
+    <string name="back_to_last_activity">backToLastActivity</string>
+    <string name="input_password">请输入密码</string>
+    <string name="delete">删除</string>
+    <string name="draw_canvas">drawCanvas</string>
+    <string name="drop">drop</string>
+    <string name="color">color</string>
+    <string name="newnote">newNote</string>
+</resources>

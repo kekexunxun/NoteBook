@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="5dp"
+    android:layout_marginTop="5dp"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/blue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:contentDescription="@string/color"
+        android:src="@drawable/color_blue" />
+
+    <ImageView
+        android:id="@+id/blue1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:contentDescription="@string/color"
+        android:src="@drawable/color_blue1" />
+
+    <ImageView
+        android:id="@+id/green"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:contentDescription="@string/color"
+        android:src="@drawable/color_green" />
+
+    <ImageView
+        android:id="@+id/grey"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:contentDescription="@string/color"
+        android:src="@drawable/color_grey" />
+
+    <ImageView
+        android:id="@+id/orange"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:contentDescription="@string/color"
+        android:src="@drawable/color_orange" />
+
+    <ImageView
+        android:id="@+id/orange1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:contentDescription="@string/color"
+        android:src="@drawable/color_orange1" />
+
+    <ImageView
+        android:id="@+id/purple"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:contentDescription="@string/color"
+        android:src="@drawable/color_purple" />
+
+    <ImageView
+        android:id="@+id/qing"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:contentDescription="@string/color"
+        android:src="@drawable/color_qing" />
+
+    <ImageView
+        android:id="@+id/red"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:contentDescription="@string/color"
+        android:src="@drawable/color_red" />
+
+
+</LinearLayout>

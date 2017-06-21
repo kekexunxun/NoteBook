@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_main_bottom"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:background="@android:color/transparent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp">
+        <!-- 删除选中的note 当点击编辑按钮之后才显示 -->
+        <LinearLayout
+            android:id="@+id/delete_select_note"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="@string/delete_selected"
+                android:textColor="#FF9900"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <!-- 删除所有的note 当点击编辑按钮之后才显示 -->
+        <LinearLayout
+            android:id="@+id/deleteAllNote"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="@string/delete_all"
+                android:textColor="#FF9900"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <!-- 附件 当点击编辑按钮之后消失 是记事本保存时附加的一些文件 -->
+        <LinearLayout
+            android:id="@+id/attachment_note"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/box_32" />
+        </LinearLayout>
+
+        <!-- 笔记数量 当点击编辑按钮之后消失 展示有多少条记录 -->
+        <LinearLayout
+            android:id="@+id/ll_noteNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="6"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/note_number_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:gravity="center_vertical|center_horizontal"
+                android:hint="@string/notesNumber"
+                android:textColor="#000000"
+                android:textSize="17sp" />
+        </LinearLayout>
+
+        <!-- 新建 当点击编辑按钮之后消失 是记事本保存时附加的一些文件 -->
+        <LinearLayout
+            android:id="@+id/create_new_note"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingTop="5dp">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:contentDescription="@string/newnote"
+                android:src="@drawable/edit_32" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
