@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.CheckBox;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -63,6 +64,9 @@ public class ListItemAdapter extends BaseAdapter {
             viewHolder.extra_content = (TextView) view.findViewById(R.id.list_item_content_extra);
             viewHolder.checkBox = (CheckBox) view.findViewById(R.id.list_item_checkbox);
             viewHolder.thumbnail = (ImageView) view.findViewById(R.id.list_item_image);
+            viewHolder.clock = (ImageView) view.findViewById(R.id.list_item_clock);
+            viewHolder.ll_checkbox = (LinearLayout) view.findViewById(R.id.ll_checkbox);
+            viewHolder.ll_clock = (LinearLayout) view.findViewById(R.id.ll_clock);
             view.setTag(viewHolder);
         } else {
             view = convertView;
@@ -90,11 +94,22 @@ public class ListItemAdapter extends BaseAdapter {
             Bitmap thumbnail = getImageThumbnail(mediaPaths[0], 100, 100);
             viewHolder.thumbnail.setImageBitmap(thumbnail);
         }
+        //如果有设置闹钟的话 显示闹钟图片
+        String ring = cursor.getString(cursor.getColumnIndex(ListData.TABLE_COLUMN_NAME_RING));
+        if (ring != null) {
+            viewHolder.ll_checkbox.setVisibility(View.GONE);
+            viewHolder.clock.setVisibility(View.VISIBLE);
+            if (ring.equals("false")) {
+                viewHolder.clock.setImageResource(R.drawable.ring);
+            }
+        }
 
         //获取对应数据
         viewHolder.title.setText(cursor.getString(cursor.getColumnIndex(ListData.TABLE_COLUMN_NAME_TITLE)));
         viewHolder.content.setText(cursor.getString(cursor.getColumnIndex(ListData.TABLE_COLUMN_NAME_TIME)));
         if (IS_CHECKBOX_SHOW) {
+            viewHolder.ll_clock.setVisibility(View.GONE);
+            viewHolder.ll_checkbox.setVisibility(View.VISIBLE);
             viewHolder.checkBox.setVisibility(View.VISIBLE);
             viewHolder.checkBox.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -147,5 +162,8 @@ public class ListItemAdapter extends BaseAdapter {
         TextView extra_content;
         CheckBox checkBox;
         ImageView thumbnail;
+        ImageView clock;
+        LinearLayout ll_checkbox;
+        LinearLayout ll_clock;
     }
 }

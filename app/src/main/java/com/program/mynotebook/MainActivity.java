@@ -1,6 +1,9 @@
 package com.program.mynotebook;
 
 import android.app.Activity;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
@@ -279,6 +282,19 @@ public class MainActivity extends Activity implements View.OnClickListener, Swip
                 break;
             //点击全部删除按钮
             case R.id.deleteAllNote:
+                //先执行删除闹钟
+                queryDB();
+                c.moveToFirst();
+                for (int j = 0; j < c.getCount(); j++) {
+                    int id = c.getInt(c.getColumnIndex(ListData.TABLE_COLUMN_NAME_ID));
+                    if (c.getString(c.getColumnIndex(ListData.TABLE_COLUMN_NAME_RING)).equals("true")) {
+                        AlarmManager am = (AlarmManager) MainActivity.this.getSystemService(Context.ALARM_SERVICE);
+                        //根据请求码来移除闹钟 通过给定的RequestCode取消闹钟
+                        am.cancel(PendingIntent.getBroadcast(MainActivity.this, id, new Intent(MainActivity.this, AlarmReceiver.class), 0));
+                    }
+                    c.moveToNext();
+                }
+                //删除表
                 db.execSQL(DELETE_TABLE);
                 initAdapter();
                 break;
@@ -290,12 +306,22 @@ public class MainActivity extends Activity implements View.OnClickListener, Swip
                 for (int ids : item) {
                     queryDB();
                     c.moveToPosition(ids);
+                    int id = c.getInt(c.getColumnIndex(ListData.TABLE_COLUMN_NAME_ID));
+                    if (c.getString(c.getColumnIndex(ListData.TABLE_COLUMN_NAME_RING)).equals("true")) {
+                        AlarmManager am = (AlarmManager) MainActivity.this.getSystemService(Context.ALARM_SERVICE);
+                        //根据请求码来移除闹钟 通过给定的RequestCode取消闹钟
+                        am.cancel(PendingIntent.getBroadcast(MainActivity.this, id, new Intent(MainActivity.this, AlarmReceiver.class), 0));
+                    }
                     String whereClause = ListData.TABLE_COLUMN_NAME_ID + "=?";
                     String[] whereArgs = {String.valueOf(c.getInt(c.getColumnIndex(ListData.TABLE_COLUMN_NAME_ID)))};
                     db.delete(ListData.TABLE_NAME_NOTES, whereClause, whereArgs);
                 }
                 initAdapter();
                 break;
+            case R.id.attachment_note:
+
+                break;
+
         }
     }
 

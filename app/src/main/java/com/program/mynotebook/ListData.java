@@ -6,7 +6,6 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 /**
  * Created by Administrator on 2017/06/02.
- *
  */
 
 public class ListData extends SQLiteOpenHelper {
@@ -17,7 +16,7 @@ public class ListData extends SQLiteOpenHelper {
     public static final String TABLE_COLUMN_NAME_TITLE = "title";
     public static final String TABLE_COLUMN_NAME_CONTENT = "note";
     public static final String TABLE_COLUMN_NAME_MEDIA_PATH = "path";
-
+    public static final String TABLE_COLUMN_NAME_RING = "ring";
 
 
     //我们只需要传递进来一个context就好了
@@ -28,13 +27,13 @@ public class ListData extends SQLiteOpenHelper {
     //当第一次打开数据库，表不存在时调用，以创建表
     //创建两行表
     //第一张表 保存notes信息
-    //第二张表 保存note对应的media信息 （图片、视频） 【可加入音频】
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE " + TABLE_NAME_NOTES + "(" + TABLE_COLUMN_NAME_ID
                 + " INTEGER PRIMARY KEY AUTOINCREMENT," + TABLE_COLUMN_NAME_TITLE
                 + " TEXT NOT NULL DEFAULT \"\"," + TABLE_COLUMN_NAME_CONTENT
                 + " TEXT NOT NULL DEFAULT \"\"," + TABLE_COLUMN_NAME_MEDIA_PATH
+                + " TEXT NOT NULL DEFAULT \"\"," + TABLE_COLUMN_NAME_RING
                 + " TEXT NOT NULL DEFAULT \"\"," + TABLE_COLUMN_NAME_TIME
                 + " TEXT NOT NULL DEFAULT \"\"" + ")");
     }

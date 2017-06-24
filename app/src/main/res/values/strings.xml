@@ -24,4 +24,10 @@
     <string name="drop">drop</string>
     <string name="color">color</string>
     <string name="newnote">newNote</string>
+    <string name="extra">extra</string>
+    <string name="b">bottom</string>
+    <string name="ring">ring</string>
+    <string name="clock">clock</string>
+    <string name="notice">新通知</string>
+    <string name="confirm">确认</string>
 </resources>

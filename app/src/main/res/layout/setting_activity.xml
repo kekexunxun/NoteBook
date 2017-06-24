@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <include layout="@layout/activity_notesedit_layout_top" />
+    <include layout="@layout/setting_aty_top" />
 
     <!-- 如果密码存在显示修改密码 -->
     <TextView

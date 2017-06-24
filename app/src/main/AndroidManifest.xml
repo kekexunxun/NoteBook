@@ -35,6 +35,14 @@
             android:theme="@style/Base.Theme.AppCompat" />
         <activity android:name=".ImageCropActivity" />
         <activity android:name=".CanvasDrawActivity" />
+        <activity
+            android:name=".AlarmShowActivity"
+            android:process=":remote"
+            android:windowSoftInputMode="stateAlwaysHidden"/>
+
+        <receiver
+            android:name=".AlarmReceiver"
+            android:process=":remote" />
     </application>
 
 </manifest>

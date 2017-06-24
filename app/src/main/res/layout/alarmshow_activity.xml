@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/alarmshow_aty_top" />
+
+    <EditText
+        android:id="@+id/show_alarm_et"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="top"
+        android:hint="@string/noteBook"
+        android:inputType="text" />
+
+    <include layout="@layout/alarmshow_aty_bottom" />
+
+</LinearLayout>
